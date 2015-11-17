@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, excpet: [:index, :show]
   def index
     @recipes = Recipe.all
   end
@@ -12,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipe.new(recipe_params)
     if @recipe.save
       redirect_to recipes_path
     end
