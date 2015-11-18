@@ -57,3 +57,4 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'carrierwave'
+gem 'rmagick'
