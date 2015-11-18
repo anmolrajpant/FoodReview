@@ -9,13 +9,14 @@
 	<tbody>
 		<% @recipes.each do |recipe| %>
 			<tr>
-				<td><%= image_tag recipe.image_url(:thumb) %></td>
+				<td><%= image_tag recipe.image_url, size:"150x150" %></td>
 				<td><%= recipe.title %></td>
 				<td><%= recipe.items %></td>
 				<td><%= recipe.process %></td>
 				<td><%= link_to 'View', recipe %></td>
 				<td><%= link_to 'edit', edit_recipe_path(recipe) %></td>
 				<td><%= link_to 'delete', recipe, method: :delete, data: {confirm: 'Delete recipe???'} %></td>
+				<td><%= link_to 'add comment', new_recipe_review_path(recipe) %></td>
 			</tr>
 		<% end %>
 	</tbody>
