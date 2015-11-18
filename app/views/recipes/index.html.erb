@@ -1,4 +1,3 @@
-<%= link_to 'new', new_recipe_path %>
 <table>
 	<thead>
 		<tr>
@@ -10,7 +9,7 @@
 	<tbody>
 		<% @recipes.each do |recipe| %>
 			<tr>
-				<td><%= image_tag recipe.image_url %></td>
+				<td><%= image_tag recipe.image_url(:thumb) %></td>
 				<td><%= recipe.title %></td>
 				<td><%= recipe.items %></td>
 				<td><%= recipe.process %></td>
