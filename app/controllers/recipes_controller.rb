@@ -5,10 +5,11 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @review = @recipe.reviews
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipe.new
   end
 
   def create
@@ -27,9 +28,6 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       redirect_to recipes_path
     end
-  end
-
-  def delete
   end
 
   def destroy

@@ -1,5 +1,5 @@
 <p>
-	<%= image_tag @recipe.image_url(:thumb) %>
+	<%= image_tag @recipe.image_url, size:"200x200" %>
 </p>
 <p>
 	<strong>Recipe:</strong>
@@ -12,4 +12,14 @@
 <p>
 	<strong>Procedure:<uplotrong>
 	<%= @recipe.process %>
+</p>
+<p>
+	<strong>Reviews:</strong>
+	<table>
+		<% @reviews.each do |review| %>
+			<tr>
+				<td><%= review.comment %></td>
+			</tr>
+		<% end %>
+	</table>
 </p>

@@ -1,23 +1,18 @@
-<table>
-	<thead>
-		<tr>
-			<td>Recipe</td>
-			<td>Ingredients</td>
-			<td>Procedure</td>
-		</tr>
-	</thead>
-	<tbody>
-		<% @recipes.each do |recipe| %>
-			<tr>
-				<td><%= image_tag recipe.image_url, size:"150x150" %></td>
-				<td><%= recipe.title %></td>
-				<td><%= recipe.items %></td>
-				<td><%= recipe.process %></td>
-				<td><%= link_to 'View', recipe %></td>
-				<td><%= link_to 'edit', edit_recipe_path(recipe) %></td>
-				<td><%= link_to 'delete', recipe, method: :delete, data: {confirm: 'Delete recipe???'} %></td>
-				<td><%= link_to 'add comment', new_recipe_review_path(recipe) %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="row">
+	<% @recipes.each do |recipe| %>
+		<div class="col-sm-6 col-md-4">
+			<strong><%= recipe.title %></strong>
+			<div class="thumbnail">
+				<%= image_tag recipe.image_url, size:"150x150" %>
+			</div>
+			<div class="caption">
+				<%= recipe.items %><br>
+				<%= recipe.process %><br>
+				<%= link_to 'View' %>
+				<%= link_to 'edit', edit_recipe_path(recipe) %>
+				<%= link_to 'delete', recipe, method: :delete, data: {confirm: 'Delete recipe???'} %>
+				<%= link_to 'add comment', new_recipe_review_path(recipe) %>
+			</div>
+	<% end %>
+		</div>
+</div>

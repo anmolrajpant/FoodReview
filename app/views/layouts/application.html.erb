@@ -8,16 +8,16 @@
 </head>
 <body>
 	<%if user_signed_in? %>
-		<nav>
-			<ul>
+		<nav class="navbar navbar-inverse">
+			<ul class="nav nav-tab">
 				<li><%= link_to 'Home', recipes_path %></li>
 				<li><%= link_to 'New', new_recipe_path %></li>
 				<li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
 			</ul>	
 		</nav>
 	<% else %>
-		<nav>
-			<ul>
+		<nav class="navbar navbar-inverse">
+			<ul class="navbar navbar-inverse">
 				<li><%= link_to 'Home', recipes_path %></li>
 				<li><%= link_to 'Log In', new_user_session_path %></li>
 				<li><%= link_to 'Sign Up', new_user_registration_path %></li>
