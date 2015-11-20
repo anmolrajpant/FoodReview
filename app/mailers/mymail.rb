@@ -1,2 +1,0 @@
-class Mymail < ApplicationMailer
-end

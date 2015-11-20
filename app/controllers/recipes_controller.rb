@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
+      UserMailer.newrecipe_email(@user).deliver
       redirect_to recipes_path
     end
   end
