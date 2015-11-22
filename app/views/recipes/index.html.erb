@@ -8,7 +8,7 @@
 			<div class="caption">
 				<%= recipe.items %><br>
 				<%= recipe.process %><br>
-				<%= link_to 'View' %>
+				<%= link_to 'View', recipe_path(recipe) %>
 				<%= link_to 'edit', edit_recipe_path(recipe) %>
 				<%= link_to 'delete', recipe, method: :delete, data: {confirm: 'Delete recipe???'} %>
 				<%= link_to 'add comment', new_recipe_review_path(recipe) %>

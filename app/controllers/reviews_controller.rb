@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @reviews = @recipe.reviews.new(save)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to recipe_path(recipe)
     end
   end
 
@@ -33,6 +33,6 @@ class ReviewsController < ApplicationController
 
   private
   def save
-    params.require(:review).permit(:review)
+    params.require(:review).permit(:comment)
   end
 end

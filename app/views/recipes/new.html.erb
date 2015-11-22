@@ -1,11 +1,19 @@
 <%= form_for :recipe, url: {action: 'create'}, :html => {:multipart => true} do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %><br>
-	<%= f.label :items %>
-	<%= f.text_area :items %><br>
-	<%= f.label :process %>
-	<%= f.text_area :process %><br>
-	<%= f.label :images %>
-	<%= f.file_field :image %>
+	<p>
+		<%= f.label ("Title:") %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label ("Ingredients:") %>
+		<%= f.text_area :items %>
+	</p>
+	<p>
+		<%= f.label ("Procedure:") %>
+		<%= f.text_area :process %>
+	</p>
+	<p>
+		<%= f.file_field :image %>	
+	</p>
+	<br>
 	<%= submit_tag ("Save") %>
 <% end %>

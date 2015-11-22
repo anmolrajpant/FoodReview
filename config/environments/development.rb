@@ -45,11 +45,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'smtp.live.com',
     port:                 587,
-    domain:               'foodreview.com',
-    user_name:            'anmol.pant.c2@gmail.com',
-    password:             'Planeths1',
+    domain:               'mail.live.com',
+    user_name:            'anmolrajpant@hotmail.com',
+    password:             'Anm0llife',
     authentication:       'plain',
     enable_starttls_auto: true  }
 end

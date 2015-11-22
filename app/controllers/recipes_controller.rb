@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @review = @recipe.reviews
+    @reviews = @recipe.reviews
   end
 
   def new
@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      UserMailer.newrecipe_email(@user).deliver
+      UserMailer.newrecipe_email(@user.id).deliver!
       redirect_to recipes_path
     end
   end
@@ -38,6 +38,7 @@ class RecipesController < ApplicationController
     end
   end
 
+  private
   def recipe_params
     params.require(:recipe).permit(:title, :items, :process, :image)    
   end
