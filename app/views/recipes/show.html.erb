@@ -20,7 +20,7 @@
 	<% end %>
 </p>
 <p>
-	<%= form_for :review, url: {action: 'create'} do |f| %>
+	<%= form_for :review, :url => recipe_reviews_path do |f| %>
 	<%= f.label :comment %>
 	<%= f.text_area :comment %><br>
 	<%= submit_tag ("Save") %>
